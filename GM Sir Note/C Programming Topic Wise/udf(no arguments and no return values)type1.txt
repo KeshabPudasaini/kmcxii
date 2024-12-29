@@ -1,0 +1,392 @@
+#include <stdio.h>
+#include <math.h>
+void areaOfRectangle();
+void areaOfCircle();
+void areaOfTriangle();
+void volumeOfSphere();
+void surfaceAreaOfFootball();
+void areaOfTriangleSides();
+void celsiusToFahrenheit();
+void fahrenheitToCelsius();
+void swapNumbers();
+void checkOddOrEven();
+void checkPositiveNegativeZero();
+void checkGreaterOfTwo();
+void checkGreatestOfThree();
+void arithmeticOperations();
+void dayOfTheWeek();
+void factorsOfNumber();
+void factorialOfNumber();
+void checkPrimeOrComposite();
+void reverseNumber();
+void checkPalindrome();
+void checkArmstrong();
+void sumOfDigits();
+void productOfDigits();
+void multiplicationTable();
+void countDigits();
+void sumOfNaturalNumbers();
+void sumOfEvenNumbers();
+void sumOfOddNumbers();
+void fibonacciSeries();
+
+int main() {
+    // Call functions here
+    areaOfRectangle();
+    areaOfCircle();
+    areaOfTriangle();
+    volumeOfSphere();
+    surfaceAreaOfFootball();
+    areaOfTriangleSides();
+    celsiusToFahrenheit();
+    fahrenheitToCelsius();
+    swapNumbers();
+    checkOddOrEven();
+    checkPositiveNegativeZero();
+    checkGreaterOfTwo();
+    checkGreatestOfThree();
+    arithmeticOperations();
+    dayOfTheWeek();
+    factorsOfNumber();
+    factorialOfNumber();
+    checkPrimeOrComposite();
+    reverseNumber();
+    checkPalindrome();
+    checkArmstrong();
+    sumOfDigits();
+    productOfDigits();
+    multiplicationTable();
+    countDigits();
+    sumOfNaturalNumbers();
+    sumOfEvenNumbers();
+    sumOfOddNumbers();
+    fibonacciSeries();
+    return 0;
+}
+
+void areaOfRectangle() {
+    double length, width;
+    printf("Enter length and width of the rectangle: ");
+    scanf("%lf %lf", &length, &width);
+    printf("Area of the rectangle: %.2lf\n", length * width);
+}
+
+void areaOfCircle() {
+    double radius;
+    printf("Enter radius of the circle: ");
+    scanf("%lf", &radius);
+    printf("Area of the circle: %.2lf\n", M_PI * radius * radius);
+}
+
+void areaOfTriangle() {
+    double base, height;
+    printf("Enter base and height of the triangle: ");
+    scanf("%lf %lf", &base, &height);
+    printf("Area of the triangle: %.2lf\n", 0.5 * base * height);
+}
+
+void volumeOfSphere() {
+    double radius;
+    printf("Enter radius of the sphere: ");
+    scanf("%lf", &radius);
+    printf("Volume of the sphere: %.2lf\n", (4.0/3.0) * M_PI * pow(radius, 3));
+}
+
+void surfaceAreaOfFootball() {
+    double radius;
+    printf("Enter radius of the football: ");
+    scanf("%lf", &radius);
+    printf("Surface area of the football: %.2lf\n", 4 * M_PI * pow(radius, 2));
+}
+
+void areaOfTriangleSides() {
+    double a, b, c, s, area;
+    printf("Enter the sides of the triangle: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+    s = (a + b + c) / 2;
+    area = sqrt(s * (s - a) * (s - b) * (s - c));
+    printf("Area of the triangle: %.2lf\n", area);
+}
+
+void celsiusToFahrenheit() {
+    double celsius;
+    printf("Enter temperature in Celsius: ");
+    scanf("%lf", &celsius);
+    printf("Temperature in Fahrenheit: %.2lf\n", (celsius * 9/5) + 32);
+}
+
+void fahrenheitToCelsius() {
+    double fahrenheit;
+    printf("Enter temperature in Fahrenheit: ");
+    scanf("%lf", &fahrenheit);
+    printf("Temperature in Celsius: %.2lf\n", (fahrenheit - 32) * 5/9);
+}
+
+void swapNumbers() {
+    int a, b, temp;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    temp = a;
+    a = b;
+    b = temp;
+    printf("Swapped numbers: a = %d, b = %d\n", a, b);
+}
+
+void checkOddOrEven() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    if (number % 2 == 0)
+        printf("%d is even\n", number);
+    else
+        printf("%d is odd\n", number);
+}
+
+void checkPositiveNegativeZero() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    if (number > 0)
+        printf("%d is positive\n", number);
+    else if (number < 0)
+        printf("%d is negative\n", number);
+    else
+        printf("%d is zero\n", number);
+}
+
+void checkGreaterOfTwo() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    if (a > b)
+        printf("%d is greater\n", a);
+    else if (b > a)
+        printf("%d is greater\n", b);
+    else
+        printf("Both numbers are equal\n");
+}
+
+void checkGreatestOfThree() {
+    int a, b, c;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &a, &b, &c);
+    if (a > b && a > c)
+        printf("%d is the greatest\n", a);
+    else if (b > a && b > c)
+        printf("%d is the greatest\n", b);
+    else
+        printf("%d is the greatest\n", c);
+}
+
+void arithmeticOperations() {
+    int choice;
+    double num1, num2, result;
+
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    printf("Choose an operation (1-Add, 2-Subtract, 3-Multiply, 4-Divide): ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1: result = num1 + num2; break;
+        case 2: result = num1 - num2; break;
+        case 3: result = num1 * num2; break;
+        case 4: result = num1 / num2; break;
+        default: printf("Invalid choice\n"); return;
+    }
+    printf("Result: %.2lf\n", result);
+}
+
+void dayOfTheWeek() {
+    int day;
+    printf("Enter a number (1-7) for the day of the week: ");
+    scanf("%d", &day);
+    switch (day) {
+        case 1: printf("Sunday\n"); break;
+        case 2: printf("Monday\n"); break;
+        case 3: printf("Tuesday\n"); break;
+        case 4: printf("Wednesday\n"); break;
+        case 5: printf("Thursday\n"); break;
+        case 6: printf("Friday\n"); break;
+        case 7: printf("Saturday\n"); break;
+        default: printf("Invalid day\n");
+    }
+}
+
+void factorsOfNumber() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("Factors of %d are: ", num);
+    for (int i = 1; i <= num; ++i) 
+	{
+        if (num % i == 0)
+            printf("%d ", i);
+    }
+    printf("\n");
+}
+
+void factorialOfNumber() {
+    int num;
+    unsigned long long factorial = 1;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    for (int i = 1; i <= num; ++i) {
+        factorial *= i;
+    }
+    printf("Factorial of %d is %llu\n", num, factorial);
+}
+
+void checkPrimeOrComposite() {
+    int num, flag = 1;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    if (num <= 1)
+        flag = 0;
+    for (int i = 2; i <= sqrt(num); ++i) {
+        if (num % i == 0) {
+            flag = 0;
+            break;
+        }
+    }
+    if (flag)
+        printf("%d is a prime number\n", num);
+    else
+        printf("%d is a composite number\n", num);
+}
+
+void reverseNumber() {
+    int num, reverse = 0, remainder;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        remainder = num % 10;
+        reverse = reverse * 10 + remainder;
+        num /= 10;
+    }
+    printf("Reversed number: %d\n", reverse);
+}
+
+void checkPalindrome() {
+    int num, reverse = 0, remainder, original;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    original = num;
+    while (num != 0) {
+        remainder = num % 10;
+        reverse = reverse * 10 + remainder;
+        num /= 10;
+    }
+    if (original == reverse)
+        printf("%d is a palindrome\n", original);
+    else
+        printf("%d is not a palindrome\n", original);
+}
+
+void checkArmstrong() {
+    int num, original, remainder, n = 0;
+    double result = 0.0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    original = num;
+    for (original = num; original != 0; ++n) {
+        original /= 10;
+    }
+    for (original = num; original != 0; original /= 10) {
+        remainder = original % 10;
+        result += pow(remainder, n);
+    }
+    if ((int)result == num)
+        printf("%d is an Armstrong number\n", num);
+    else
+        printf("%d is not an Armstrong number\n", num);
+}
+
+void sumOfDigits() {
+    int num, sum = 0, remainder;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        remainder = num % 10;
+        sum += remainder;
+        num /= 10;
+    }
+    printf("Sum of digits: %d\n", sum);
+}
+
+void productOfDigits() {
+    int num, product = 1, remainder;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        remainder = num % 10;
+        product *= remainder;
+        num /= 10;
+    }
+    printf("Product of digits: %d\n", product);
+}
+
+void multiplicationTable() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    for (int i = 1; i <= 10; ++i) {
+        printf("%d x %d = %d\n", num, i, num * i);
+    }
+}
+
+void countDigits() {
+    int num, count = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        num /= 10;
+        ++count;
+    }
+    printf("Number of digits: %d\n", count);
+}
+
+void sumOfNaturalNumbers() {
+    int n, sum = 0;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    sum = n * (n + 1) / 2;
+    printf("Sum of first %d natural numbers: %d\n", n, sum);
+}
+
+void sumOfEvenNumbers() {
+    int n, sum = 0;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; ++i) {
+        if (i % 2 == 0)
+            sum += i;
+    }
+    printf("Sum of first %d even natural numbers: %d\n", n, sum);
+}
+
+void sumOfOddNumbers() {
+    int n, sum = 0;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; ++i) {
+        if (i % 2 != 0)
+            sum += i;
+    }
+    printf("Sum of first %d odd natural numbers: %d\n", n, sum);
+}
+
+void fibonacciSeries() {
+    int n, t1 = 0, t2 = 1, nextTerm;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    printf("Fibonacci Series: %d, %d", t1, t2);
+    for (int i = 1; i <= n - 2; ++i) {
+        nextTerm = t1 + t2;
+        printf(", %d", nextTerm);
+        t1 = t2;
+        t2 = nextTerm;
+    }
+    printf("\n");
+}

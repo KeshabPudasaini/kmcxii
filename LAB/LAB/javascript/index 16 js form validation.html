@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <title>Form Validation</title>
+</head>
+<body>
+    <fieldset style="width:30%">
+        <legend>Form</legend>
+        <form>
+            <label> UserName: </label> 
+            <input type="text" name="Name" id="inp1"><br><br>
+            <label> Password: </label>
+            <input type="password" name="password" id="pass"><br><br>
+            <button type="button" onclick="validateForm()">Submit</button>
+        </form>
+    </fieldset>
+
+    <script type="text/javascript">
+        function validateForm() {
+        	 // Get values from input fields
+            var username = document.getElementById('inp1').value;
+            var password = document.getElementById('pass').value;
+
+            // Check either username or password is empty
+            if (username === '' || password === '') {
+                alert("Both fields must be filled out");
+            } else if (username === 'admin' && password === 'pass') {
+                // Successful login
+                alert("Login Successful");
+            } else {
+                // Invalid credentials
+                alert("Invalid username or password");
+            }
+        }
+    </script>
+</body>
+</html>
